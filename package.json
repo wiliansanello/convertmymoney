@@ -1,0 +1,27 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "Coin converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/wiliansanello/convertmymoney"
+  },
+  "keywords": [
+    "convert",
+    "money"
+  ],
+  "author": "Wilian Ansanello",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.2.3"
+  }
+}
