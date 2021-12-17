@@ -1,5 +1,7 @@
 body{
+  font-family:Tahoma, sans-serif;
   text-align: center;
+  background-color: blue;  
 }
 
 h1 img{
@@ -9,21 +11,74 @@ h1 img{
 
 input{
   border: 1px solid #000000;
-  background: #fdfdfd;
+  border-radius: 25px;
+  background: #b0b0b8;
+  font-family: Tahoma, sans-serif;
   font-size: 20px;
   padding: 10px;
   margin: 4px;
 }
 
 button{
-  border: 1px solid #000000;
-  background: #d8d8d8;
+  border: 1px solid #ff8000;
+  border-radius: 25px;
+  background-color:#ff8000;
+  font-family: Tahoma, sans-serif;
   font-size: 20px;
-  padding: 1opx;
+  padding: 10px 100px 10px 100px;  
+  margin: 24px;
+  color:white;
+}
+
+button:hover{
+  background-color: #c86b19
+}
+
+.cota-novamente{
+  border: 1px solid #ff8000;
+  border-radius: 25px;
+  background: #ff8000;
+  font-family: Tahoma, sans-serif;
+  font-size: 20px;
+  padding: 10px 100px 10px 100px;  
+  margin: 24px auto 98px auto;
+  color:white; 
+}
+
+.apresenta{
+  color:white;
+  font-size:20px;   
+  margin-bottom: 30px;
+}
+
+.form{
+  margin-top:100px;
+  margin-bottom:104px;
 }
 
 .result{
+  margin: 100px auto 90px auto;
   padding: 10px;
-  border: 1px solid #d8d8d8;
-  background: #fdfdfd;
+  border-radius: 10px;
+  border: 1px solid #b0b0b8;
+  background: #b0b0b8;
+  width: 450px;
+  font-family: Tahoma, sans-serif;
+  font-size: 20px;
+}
+
+.header{
+  margin-top:-20px;
+  background: #ff8000;
+}
+
+.footer{
+  font-family: Tahoma, sans-serif;
+  color: white;
+  background: #ff8000;
+  padding: 5px;
+}
+
+a{
+  color: white;
 }
