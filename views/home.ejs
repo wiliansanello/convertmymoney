@@ -1,11 +1,28 @@
 <%- include('header') %>
+  <script type="text/javascript" src="/lib/convert.js"></script>
   <div class="form">
     <form method="GET" action="/cotacao">
       <div class="apresenta">
-        <label>Informe o valor que deseja converter para a cotação determinada abaixo</label><br>
+        <label>Informe o valor e a moeda que deseja efetuar a cotação</label><br>
       </div>
-      <input name="cotacao" placeholder="Cotação moeda" value="<%= cotacao%>"><br>
-      <input name="quantidade" placeholder="Valor em reais"><br>
+      <label>Moeda de cotação: </label>
+      <select id="moedaCotacao" name="moedaCotacao">
+        <option value='selecione' selected>Selecione</option>
+        <option value="BTC">Bitcoin</option>
+        <option value="USD">Dolar</option>
+        <option value="EUR">Euro</option>
+        <option value="BRL">Real</option>
+      </select> <br>
+      <input name="cotacao" placeholder="Moeda de cotação"><br>
+      <label>Moeda de conversão: </label>
+      <select id="moedaConversao" name="moedaConversao" onchange={getCoins}>
+        <option value='selecione' selected>Selecione</option>
+        <option value="BTC">Bitcoin</option>
+        <option value="USD">Dolar</option>
+        <option value="EUR">Euro</option>
+        <option value="BRL">Real</option>
+      </select> <br>
+      <input name="conversao" placeholder="Moeda de conversão"><br>
       <button>Converter!</button>
     </form>
   </div>

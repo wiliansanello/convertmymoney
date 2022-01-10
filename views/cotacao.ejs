@@ -4,11 +4,14 @@
       <% if(error) { %>
         <%= error %>
       <% } else { %>
-        <%= quantidade %>
-        dólares na cotação
-        <%= cotacao %> é igual a: <%= conversao %> reais
+        Resultado <br><br>
+        Valor cotação: <%= cotacao %> <br>
+        Moeda cotação: <%= moedaCotacao %> <br> 
+        Valor a converter: <%= conversao %><br>
+        Moeda conversão: <%= moedaConversao %><br>
+        Valor convertido: <%= resultado %>
       <% } %>
     </div>
-    <br /><button class="cota-novamente">Cotar novamente</button>
+    <br /><button class="novaCotacao">Cotar novamente</button>
   </form>
   <%- include('footer') %>
