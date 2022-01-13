@@ -3,35 +3,55 @@ const app = express()
 const path = require('path')
 
 const convert = require('./lib/convert')
-const apiBCB = require('./lib/api.bcb')
+const apiBCB = require('./lib/api.currency')
+const res = require('express/lib/response')
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', async (req, res) => {
-  const cotacao = await apiBCB.getCotacao()
-  console.log('cotacao', cotacao)
-  res.render('home', {
-    cotacao
-  })
+app.get('/', (req, res) => {
+  res.render('home')
 })
 
-app.get('/cotacao', (req, res) => {
-  res.render('cotacao')
-  console.log(res)
-  const { cotacao, quantidade } = req.query
-  if (cotacao && quantidade) {
-    const conversao = convert.convert(cotacao, quantidade)
-    res.render('cotacao', {
+app.get('/currency', async (req, res) => {
+  let cotacao = ''
+  const { moedaCotacao, moedaConversao } = req.query
+  if (moedaCotacao && moedaConversao) {
+    if (moedaCotacao !== moedaConversao) {
+      cotacao = await apiBCB.getCotacao(moedaCotacao, moedaConversao)
+      console.log('cotacao', cotacao)
+      res.render('currency', {
+        error: false,
+        cotacao,
+        moedaConversao,
+        moedaCotacao
+      })
+    } else {
+      res.render('break', {
+        error: 'Dados inválidos para a cotação.'
+      })
+    }
+  }
+})
+
+
+app.get('/result', (req, res) => {
+  const { cotacao, moedaCotacao, conversao, moedaConversao } = req.query
+  console.log(req.query)
+  if (cotacao && conversao) {
+    const resultado = convert.convert(cotacao, conversao, moedaCotacao, moedaConversao)
+    res.render('result', {
       error: false,
-      cotacao: convert.toMoney(cotacao),
-      quantidade: convert.toMoney(quantidade),
-      conversao: convert.toMoney(conversao)
+      cotacao: convert.toMoney(cotacao, moedaCotacao),
+      moedaCotacao: moedaCotacao,
+      conversao: convert.toMoney(conversao),
+      moedaConversao: moedaConversao,
+      resultado: convert.toMoney(resultado)
     })
   } else {
-    res.render('cotacao', {
-      error: 'Não há valores informados'
+    res.render('result', {
+      error: 'Por favor, preencha todos os dados da cotação'
     })
   }
 })

@@ -1,22 +1,44 @@
 body{
+  background-color: blue; 
   font-family:Tahoma, sans-serif;
+  font-size: 20px;
   text-align: center;
-  background-color: blue;  
+  color: white;   
 }
 
-h1 img{
-  width: 489px;
-  margin: 20px;
+h1 img {
+  width: 289px;
+  margin: 10px;  
+}
+
+.form{
+  margin-top:180px;    
+}
+
+.currency{
+  margin-top:150px;
 }
 
 input{
-  border: 1px solid #000000;
+  border: 1px solid #ff8000;
   border-radius: 25px;
   background: #b0b0b8;
-  font-family: Tahoma, sans-serif;
+  font-family:Tahoma, sans-serif;
   font-size: 20px;
+  text-align: center;
   padding: 10px;
   margin: 4px;
+}
+
+select{
+  border: solid blue;
+  border-radius:25px;
+  background-color:#b0b0b8;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  margin: 4px;
+  width: 300px;
 }
 
 button{
@@ -25,58 +47,53 @@ button{
   background-color:#ff8000;
   font-family: Tahoma, sans-serif;
   font-size: 20px;
-  padding: 10px 100px 10px 100px;  
+  padding: 10px 110px 10px 110px;  
   margin: 24px;
-  color:white;
+  color:white;  
 }
 
 button:hover{
   background-color: #c86b19
 }
 
-.cota-novamente{
-  border: 1px solid #ff8000;
-  border-radius: 25px;
-  background: #ff8000;
-  font-family: Tahoma, sans-serif;
-  font-size: 20px;
-  padding: 10px 100px 10px 100px;  
-  margin: 24px auto 98px auto;
-  color:white; 
-}
-
-.apresenta{
-  color:white;
-  font-size:20px;   
-  margin-bottom: 30px;
-}
-
-.form{
-  margin-top:100px;
-  margin-bottom:104px;
+button:disabled {
+  background-color:grey;
+  color: black
 }
 
 .result{
-  margin: 100px auto 90px auto;
-  padding: 10px;
+  margin: auto auto 20px auto;
+  padding: 20px;
   border-radius: 10px;
-  border: 1px solid #b0b0b8;
-  background: #b0b0b8;
-  width: 450px;
+  border: 1px solid #f0de8f;
+  background: #f0de8f;
+  width: 350px;
   font-family: Tahoma, sans-serif;
   font-size: 20px;
+  color: black;
+  box-sizing: border-box;
 }
 
 .header{
-  margin-top:-20px;
+  position: fixed;
+  top:0px;
   background: #ff8000;
+  width: 100%;    
 }
 
 .footer{
+  position:fixed;
+  bottom: 0px;
   font-family: Tahoma, sans-serif;
+  font-size: 14px;
   color: white;
   background: #ff8000;
-  padding: 5px;
+  width: 100%;      
+}
+
+.footer a img{
+  display: inline; 
+  padding: 10px 2px 0px 2px;
 }
 
 a{

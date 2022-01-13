@@ -1,0 +1,19 @@
+<%- include('header') %>  
+<form method="GET" action="/">
+  <div class='form'>
+    <div class="result">
+      <% if(error) { %>
+        <%= error %>
+      <% } else { %>
+        Resultado <br><br>
+        Valor cotação: <%= cotacao %> <br>
+        Moeda cotação: <%= moedaCotacao %> <br> 
+        Valor a converter: <%= conversao %><br>
+        Moeda conversão: <%= moedaConversao %><br>
+        Valor convertido: <%= resultado %>
+      <% } %>
+    </div>
+    <br /><button class="novaCotacao">Cotar novamente</button>
+  </div>
+  </form>
+  <%- include('footer') %>

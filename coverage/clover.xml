@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1639647725391" clover="3.2.0">
-  <project timestamp="1639647725392" name="All files">
-    <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8" elements="30" coveredelements="30" complexity="0" loc="22" ncloc="22" packages="1" files="2" classes="2"/>
+<coverage generated="1642092617307" clover="3.2.0">
+  <project timestamp="1642092617308" name="All files">
+    <metrics statements="47" coveredstatements="38" conditionals="6" coveredconditionals="6" methods="14" coveredmethods="9" elements="67" coveredelements="53" complexity="0" loc="47" ncloc="47" packages="1" files="3" classes="3"/>
     <file name="api.bcb.js" path="/home/wilian/vscode-projects/convertmymoney/lib/api.bcb.js">
       <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
       <line num="1" count="1" type="stmt"/>
@@ -22,13 +22,41 @@
       <line num="20" count="1" type="stmt"/>
       <line num="25" count="1" type="stmt"/>
     </file>
-    <file name="convert.js" path="/home/wilian/vscode-projects/convertmymoney/lib/convert.js">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+    <file name="api.currency.js" path="/home/wilian/vscode-projects/convertmymoney/lib/api.currency.js">
+      <metrics statements="16" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="2" count="2" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
-      <line num="6" count="2" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+    </file>
+    <file name="convert.js" path="/home/wilian/vscode-projects/convertmymoney/lib/convert.js">
+      <metrics statements="14" coveredstatements="14" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="5" count="3" type="cond" truecount="4" falsecount="0"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="15" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

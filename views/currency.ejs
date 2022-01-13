@@ -1,0 +1,13 @@
+<%- include('header') %>
+  <form method="GET" action="/result">
+    <div class="currency"></div>
+    <label>Moeda/valor da cotação</label><br />
+    <input name="moedaCotacao" value="<%=moedaCotacao%>"><br />
+    <input name="cotacao" value="<%=cotacao%>"><br />
+    <label>Moeda/valor para conversão</label><br />
+    <input name="moedaConversao" value="<%=moedaConversao%>"><br />
+    <input name="conversao" placeholder="Valor Conversão"><br />
+    <button>Converter</button>
+    </div>
+  </form>
+  <%- include('footer') %>

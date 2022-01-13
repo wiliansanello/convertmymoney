@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for api.bcb.js</title>
+    <title>Code coverage report for api.currency.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> api.bcb.js</h1>
+        <h1><a href="index.html">All files</a> api.currency.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>8/20</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>1/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,26 +91,36 @@
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,32 +137,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const axios = require('axios')
 &nbsp;
-const getUrl = data =&gt; `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%27${data}%27&amp;$top=100&amp;$format=json&amp;$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`
-const getCotacaoAPI = url =&gt; axios.get(url)
-const extractCotacao = res =&gt; res.data.value[0].cotacaoVenda
-const getToday = () =&gt; {
-  const today = new Date()
-  return (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear()
+const getUrl = <span class="fstat-no" title="function not covered" >da</span>ta =&gt; <span class="cstat-no" title="statement not covered" >`https://economia.awesomeapi.com.br/last/${data}`</span>
+const getCotacaoAPI = <span class="fstat-no" title="function not covered" >ur</span>l =&gt; <span class="cstat-no" title="statement not covered" >axios.get(url)</span>
+const extractCotacao = <span class="fstat-no" title="function not covered" >(r</span>es, key) =&gt; <span class="cstat-no" title="statement not covered" >res.data[key].ask</span>
+&nbsp;
+const getCoins = <span class="fstat-no" title="function not covered" >(m</span>oedaCota, moedaConv) =&gt; {
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    endLink: moedaCota + '-' + moedaConv,
+    nomeObj: moedaCota + moedaConv
+  }
 }
 &nbsp;
-const getCotacao = ({ getToday, getUrl, getCotacaoAPI, extractCotacao }) =&gt; async () =&gt; {
-  try {
-    const today = getToday()
-    const url = getUrl(today)
-    const res = await getCotacaoAPI(url)
-    console.log(res)
-    const cotacao = extractCotacao(res)
-    return cotacao
+const getCotacao = ({ getUrl, getCotacaoAPI, getCoins, extractCotacao }) =&gt; <span class="fstat-no" title="function not covered" >as</span>ync (cota, conv) =&gt; {
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const keyCurr = <span class="cstat-no" title="statement not covered" >getCoins(cota, conv).nomeObj</span>
+    const currencyPath = <span class="cstat-no" title="statement not covered" >getCoins(cota, conv).endLink</span>
+    const url = <span class="cstat-no" title="statement not covered" >getUrl(currencyPath)</span>
+    const res = <span class="cstat-no" title="statement not covered" >await getCotacaoAPI(url)</span>
+    //console.log(res)
+&nbsp;
+    const cotacao = <span class="cstat-no" title="statement not covered" >extractCotacao(res, keyCurr)</span>
+<span class="cstat-no" title="statement not covered" >    return cotacao</span>
   } catch (err) {
-    return ''
+<span class="cstat-no" title="statement not covered" >    return ''</span>
   }
 &nbsp;
 }
 &nbsp;
 module.exports = {
   getCotacaoAPI,
-  getCotacao: getCotacao({ getToday, getUrl, getCotacaoAPI, extractCotacao }),
-  getToday,
+  getCotacao: getCotacao({ getCoins, getUrl, getCotacaoAPI, extractCotacao }),
+  getCoins,
   extractCotacao,
   getUrl,
   pure: {
