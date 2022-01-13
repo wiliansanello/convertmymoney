@@ -1,5 +1,6 @@
-<%- include('header') %>
-  <form method="GET" action="/">
+<%- include('header') %>  
+<form method="GET" action="/">
+  <div class='form'>
     <div class="result">
       <% if(error) { %>
         <%= error %>
@@ -13,5 +14,6 @@
       <% } %>
     </div>
     <br /><button class="novaCotacao">Cotar novamente</button>
+  </div>
   </form>
   <%- include('footer') %>

@@ -1,0 +1,12 @@
+<%-include('header')%>
+  <div class='form'>
+    <form method="GET" action="/">
+      <div class="result">
+        <% if(error) { %>
+          <%= error %>
+            <% } %>
+      </div>
+      <button>Voltar</button>
+    </form>
+  </div>
+  <%-include('footer')%>

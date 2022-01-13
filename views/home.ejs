@@ -1,29 +1,39 @@
 <%- include('header') %>
-  <script type="text/javascript" src="/lib/convert.js"></script>
-  <div class="form">
-    <form method="GET" action="/cotacao">
-      <div class="apresenta">
-        <label>Informe o valor e a moeda que deseja efetuar a cotação</label><br>
-      </div>
-      <label>Moeda de cotação: </label>
-      <select id="moedaCotacao" name="moedaCotacao">
-        <option value='selecione' selected>Selecione</option>
-        <option value="BTC">Bitcoin</option>
-        <option value="USD">Dolar</option>
-        <option value="EUR">Euro</option>
-        <option value="BRL">Real</option>
-      </select> <br>
-      <input name="cotacao" placeholder="Moeda de cotação"><br>
-      <label>Moeda de conversão: </label>
-      <select id="moedaConversao" name="moedaConversao" onchange={convert}>
-        <option value='selecione' selected>Selecione</option>
-        <option value="BTC">Bitcoin</option>
-        <option value="USD">Dolar</option>
-        <option value="EUR">Euro</option>
-        <option value="BRL">Real</option>
-      </select> <br>
-      <input name="conversao" placeholder="Moeda de conversão"><br>
-      <button>Converter!</button>
-    </form>
-  </div>
+  <script type="text/javascript">
+    const firstStep = () => {
+      if (document.getElementById("moedaCotacao").value !== "selecione") {
+        document.getElementById("moedaConversao").removeAttribute("disabled")
+      }
+    }
+
+    const secondStep = () => {
+      if (document.getElementById("moedaConversao").value !== "selecione"
+        || document.getElementById("moedaConversao").value !== document.getElementById("moedaCotacao").value) {
+        document.getElementById("next").removeAttribute("disabled")
+      }
+
+    }
+  </script>
+
+  <form method="GET" action="/currency">
+    <div class='form'></div>
+    <label>Escolha as moedas da cotação</label><br>
+
+    <select id="moedaCotacao" name="moedaCotacao" onchange="firstStep()">
+      <option value='selecione' selected>Moeda Cotação</option>
+      <option value="BTC">Bitcoin (BTC)</option>
+      <option value="USD">Dolar (USD)</option>
+      <option value="EUR">Euro (EUR)</option>
+      <option value="BRL">Real (BRL)</option>
+    </select><br />
+    <select id="moedaConversao" name="moedaConversao" onchange="secondStep()" disabled>
+      <option value='selecione' selected>Moeda Conversão</option>
+      <option value="USD">Dolar (USD)</option>
+      <option value="EUR">Euro (EUR)</option>
+      <option value="BRL">Real (BRL)</option>
+    </select><br />
+    <button id="next" disabled>Próximo</button>
+    </div>
+  </form>
+
   <%- include('footer') %>
